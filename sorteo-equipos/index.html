@@ -15,7 +15,7 @@
       <p>Organiza a tus participantes en equipos al azar.</p>
     </header>
 
-    <section class="equipos-panel" aria-labelledby="titulo-configuracion">
+    <section id="configuracion" class="equipos-panel" aria-labelledby="titulo-configuracion">
       <h2 id="titulo-configuracion">Configura tu sorteo</h2>
       <div class="equipos-campos">
         <div class="equipos-participantes">
@@ -35,19 +35,26 @@
             </select>
           </div>
           <div class="equipos-campo">
-            <label for="cantidad">Cantidad</label>
+            <label id="etiqueta-cantidad" for="cantidad">Cantidad de equipos</label>
             <select id="cantidad">
               <option value="2">2</option>
             </select>
           </div>
           <div class="equipos-campo">
             <label for="titulo-equipos">3. Título</label>
-            <input id="titulo-equipos" type="text" placeholder="Por ejemplo: Equipos de exposición">
+            <input id="titulo-equipos" type="text" maxlength="100" placeholder="Por ejemplo: Equipos de exposición">
           </div>
           <p id="error-participantes" role="alert"></p>
-          <button class="equipos-boton" type="button" disabled>Generar equipos</button>
+          <p class="equipos-ayuda">Si sobran participantes, se repartirán entre los equipos. Al elegir participantes por equipo, el último puede quedar incompleto.</p>
+          <button id="generar" class="equipos-boton" type="button">Generar equipos</button>
         </div>
       </div>
+    </section>
+    <section id="resultados" class="equipos-panel" aria-labelledby="titulo-resultado" hidden>
+      <button id="volver" class="equipos-volver" type="button">← Volver a la lista</button>
+      <h2 id="titulo-resultado" tabindex="-1"></h2>
+      <p id="estado-sorteo" role="status"></p>
+      <div id="lista-equipos" class="equipos-resultados"></div>
     </section>
   </main>
 </body>

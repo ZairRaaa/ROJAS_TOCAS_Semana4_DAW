@@ -91,6 +91,7 @@
 }
 
 .sorteo-equipos .equipos-boton {
+  cursor: pointer;
   align-self: flex-end;
   padding: 12px 24px;
   border: 0;
@@ -100,6 +101,37 @@
   font: inherit;
   font-weight: 650;
 }
+
+.sorteo-equipos [hidden] { display: none !important; }
+.sorteo-equipos #error-participantes { color: #ac2430; }
+.sorteo-equipos #estado-datos { font-size: 13px; color: #53647a; }
+.sorteo-equipos .equipos-resultados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+.sorteo-equipos .equipos-tarjeta {
+  border: 1px solid #bbc8da;
+  border-top: 4px solid #245bc0;
+  border-radius: 8px;
+  padding: 18px;
+  overflow-wrap: anywhere;
+}
+.sorteo-equipos .equipos-tarjeta h3 { margin: 0 0 12px; }
+.sorteo-equipos .equipos-tarjeta ol { padding-left: 24px; margin: 0; }
+.sorteo-equipos .equipos-tarjeta li { padding: 5px 0; }
+.sorteo-equipos .equipos-volver {
+  border: 0;
+  background: transparent;
+  color: #245bc0;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 24px;
+}
+.sorteo-equipos #titulo-resultado { overflow-wrap: anywhere; }
+.sorteo-equipos .equipos-acciones { display: flex; flex-wrap: wrap; gap: 12px; }
 
 .sorteo-equipos .equipos-boton:disabled {
   background: #dde4ee;
