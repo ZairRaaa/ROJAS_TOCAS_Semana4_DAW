@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula Virtual - Ruleta Aleatoria</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="../compartido/aula.css" />
+  </head>
+  <body class="pagina-ruleta">
+    <header class="aula-cabecera">
+      <a class="aula-marca" href="../index.html">Aula Virtual</a>
+      <nav class="aula-navegacion" aria-label="Herramientas del aula">
+        <a href="../ruleta/index.html" aria-current="page">Ruleta</a>
+        <a href="../sorteo-equipos/index.html">Sorteo de Equipos</a>
+      </nav>
+    </header>
+
+    <main class="contenedor-principal" id="contenedorRuleta">
+      <h1 class="aula-titulo">Ruleta aleatoria</h1>
+      <!-- ===== Panel de la ruleta ===== -->
+      <section class="panel-ruleta">
+        <div class="caja-respuesta">
+          <span class="etiqueta-respuesta">RESPUESTA</span>
+          <span id="textoRespuesta" class="valor-respuesta">—</span>
+        </div>
+
+        <div class="zona-ruleta" id="zonaRuleta" tabindex="0">
+          <div class="puntero-selector"></div>
+          <canvas id="lienzoRuleta" width="520" height="520"></canvas>
+          <button
+            id="botonCentroGirar"
+            class="boton-centro-girar"
+            title="Clic o SPACE para girar"
+          >
+            Girar
+          </button>
+        </div>
+
+        <div class="controles-principales">
+          <button id="botonIniciar" class="boton boton-primario">
+            Iniciar
+          </button>
+          <button id="botonReiniciar" class="boton boton-peligro">
+            Reiniciar
+          </button>
+        </div>
+      </section>
+
+      <!-- ===== Panel lateral: edición de elementos ===== -->
+      <section class="panel-lateral">
+        <div class="fila-titulo-lista">
+          <input
+            type="text"
+            id="campoTituloLista"
+            class="campo-titulo"
+            aria-label="Título de la ruleta"
+            value="Lista de elementos"
+            maxlength="60"
+          />
+        </div>
+
+        <div class="envoltorio-textarea">
+          <div
+            id="capaResaltado"
+            class="capa-resaltado"
+            aria-hidden="true"
+          ></div>
+          <textarea
+            id="areaElementos"
+            class="area-elementos"
+            aria-label="Elementos de la ruleta"
+            readonly
+            spellcheck="false"
+            placeholder="Escribe un elemento por línea..."
+          ></textarea>
+        </div>
+
+        <div class="botones-textarea">
+          <button id="botonTitulo" class="boton boton-secundario">
+            Título
+          </button>
+          <button id="botonEditar" class="boton boton-secundario">
+            Editar
+          </button>
+          <button id="botonEsconder" class="boton boton-secundario">
+            esconder…
+          </button>
+        </div>
+
+        <p id="mensajeEstado" class="mensaje-estado"></p>
+
+        <div class="ayuda-teclado">
+          <div class="fila-ayuda"><kbd>SPACE</kbd><span>Gíralo</span></div>
+          <div class="fila-ayuda">
+            <kbd>S</kbd><span>Ocultar el elemento seleccionado</span>
+          </div>
+          <div class="fila-ayuda"><kbd>R</kbd><span>Reiniciar</span></div>
+          <div class="fila-ayuda"><kbd>E</kbd><span>Editar</span></div>
+          <div class="fila-ayuda">
+            <kbd>F</kbd><span>Pantalla completa</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="ruleta.js"></script>
+  </body>
+</html>

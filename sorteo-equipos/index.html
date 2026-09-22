@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorteo de equipos | Aula virtual</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="../compartido/aula.css">
+  <script src="sorteo.js" defer></script>
+</head>
+<body class="sorteo-equipos">
+    <header class="aula-cabecera">
+      <a class="aula-marca" href="../index.html">Aula Virtual</a>
+      <nav class="aula-navegacion" aria-label="Herramientas del aula">
+        <a href="../ruleta/index.html">Ruleta</a>
+        <a href="../sorteo-equipos/index.html" aria-current="page">Sorteo de Equipos</a>
+      </nav>
+    </header>
+  <main class="equipos-contenedor">
+    <header class="equipos-encabezado">
+      <h1>Sorteo de equipos</h1>
+      <p>Organiza a tus participantes en equipos al azar.</p>
+    </header>
+
+    <section id="configuracion" class="equipos-panel" aria-labelledby="titulo-configuracion">
+      <h2 id="titulo-configuracion">Configura tu sorteo</h2>
+      <div class="equipos-campos">
+        <div class="equipos-participantes">
+          <label for="participantes">1. Participantes</label>
+          <p id="ayuda-participantes" class="equipos-ayuda">Escribe un participante por línea. Máximo 100 participantes y 50 caracteres por nombre.</p>
+          <textarea id="participantes" rows="12" aria-describedby="ayuda-participantes" placeholder="Ana López&#10;Luis Pérez&#10;María Torres"></textarea>
+          <p id="contador" class="equipos-ayuda"></p>
+          <p id="estado-datos" role="status"></p>
+        </div>
+
+        <div class="equipos-opciones">
+          <div class="equipos-campo">
+            <label for="modo-sorteo">2. Cómo dividir</label>
+            <select id="modo-sorteo">
+              <option value="cantidad-equipos">Cantidad de equipos</option>
+              <option value="participantes-por-equipo">Participantes por equipo</option>
+            </select>
+          </div>
+          <div class="equipos-campo">
+            <label id="etiqueta-cantidad" for="cantidad">Cantidad de equipos</label>
+            <select id="cantidad">
+              <option value="2">2</option>
+            </select>
+          </div>
+          <div class="equipos-campo">
+            <label for="titulo-equipos">3. Título</label>
+            <input id="titulo-equipos" type="text" maxlength="100" placeholder="Por ejemplo: Equipos de exposición">
+          </div>
+          <p id="error-participantes" role="alert"></p>
+          <p class="equipos-ayuda">Si sobran participantes, se repartirán entre los equipos. Al elegir participantes por equipo, el último puede quedar incompleto.</p>
+          <button id="generar" class="equipos-boton" type="button">Generar equipos</button>
+        </div>
+      </div>
+    </section>
+    <section id="resultados" class="equipos-panel" aria-labelledby="titulo-resultado" hidden>
+      <button id="volver" class="equipos-volver" type="button">← Volver a la lista</button>
+      <h2 id="titulo-resultado" tabindex="-1"></h2>
+      <p id="estado-sorteo" role="status"></p>
+      <div id="lista-equipos" class="equipos-resultados"></div>
+      <div class="equipos-acciones">
+        <button id="descargar" class="equipos-boton" type="button" disabled>Descargar JPG</button>
+        <button id="copiar" class="equipos-boton" type="button" disabled>Copiar equipos</button>
+        <button id="copiar-columnas" class="equipos-boton" type="button" disabled>Copiar en columnas</button>
+      </div>
+      <p id="estado-exportacion" role="status"></p>
+      <div id="copia-manual" hidden>
+        <label for="texto-copia">Selecciona y copia el resultado con Ctrl+C</label>
+        <textarea id="texto-copia" readonly rows="8"></textarea>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

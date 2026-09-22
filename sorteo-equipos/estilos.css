@@ -1,0 +1,155 @@
+.sorteo-equipos {
+  margin: 0;
+  background: #f3f6fb;
+  color: #203047;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.sorteo-equipos * {
+  box-sizing: border-box;
+}
+
+.sorteo-equipos .equipos-contenedor {
+  width: min(100% - 40px, 1000px);
+  margin: 56px auto;
+}
+
+.sorteo-equipos .equipos-encabezado {
+  margin-bottom: 28px;
+}
+
+.sorteo-equipos .equipos-etiqueta {
+  color: #245bc0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.sorteo-equipos h1 {
+  margin: 8px 0;
+  font-size: clamp(28px, 5vw, 40px);
+}
+
+.sorteo-equipos .equipos-panel {
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #dbe3ef;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px #20304708;
+}
+
+.sorteo-equipos h2 {
+  margin: 0 0 24px;
+  font-size: 20px;
+}
+
+.sorteo-equipos .equipos-campos {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+}
+
+.sorteo-equipos label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 650;
+}
+
+.sorteo-equipos .equipos-ayuda,
+.sorteo-equipos .equipos-aviso {
+  color: #53647a;
+  font-size: 13px;
+}
+
+.sorteo-equipos textarea,
+.sorteo-equipos select,
+.sorteo-equipos input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bbc8da;
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+}
+
+.sorteo-equipos textarea {
+  min-height: 270px;
+  resize: vertical;
+}
+
+.sorteo-equipos :focus-visible {
+  outline: 3px solid #245bc0;
+  outline-offset: 3px;
+}
+
+.sorteo-equipos .equipos-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sorteo-equipos .equipos-boton {
+  cursor: pointer;
+  align-self: flex-end;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 8px;
+  background: #245bc0;
+  color: #fff;
+  font: inherit;
+  font-weight: 650;
+}
+
+.sorteo-equipos [hidden] { display: none !important; }
+.sorteo-equipos #error-participantes { color: #ac2430; }
+.sorteo-equipos #estado-datos { font-size: 13px; color: #53647a; }
+.sorteo-equipos .equipos-resultados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+.sorteo-equipos .equipos-tarjeta {
+  border: 1px solid #bbc8da;
+  border-top: 4px solid #245bc0;
+  border-radius: 8px;
+  padding: 18px;
+  overflow-wrap: anywhere;
+}
+.sorteo-equipos .equipos-tarjeta h3 { margin: 0 0 12px; }
+.sorteo-equipos .equipos-tarjeta ol { padding-left: 24px; margin: 0; }
+.sorteo-equipos .equipos-tarjeta li { padding: 5px 0; }
+.sorteo-equipos .equipos-volver {
+  border: 0;
+  background: transparent;
+  color: #245bc0;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 24px;
+}
+.sorteo-equipos #titulo-resultado { overflow-wrap: anywhere; }
+.sorteo-equipos .equipos-acciones { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.sorteo-equipos .equipos-boton:disabled {
+  background: #dde4ee;
+  color: #526177;
+  cursor: not-allowed;
+}
+
+@media (max-width: 680px) {
+  .sorteo-equipos .equipos-contenedor {
+    margin: 28px auto;
+  }
+
+  .sorteo-equipos .equipos-panel {
+    padding: 20px;
+  }
+
+  .sorteo-equipos .equipos-campos {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

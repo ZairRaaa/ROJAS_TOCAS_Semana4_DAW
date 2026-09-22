@@ -1,0 +1,316 @@
+:root {
+  --color-fondo: #ffffff;
+  --color-panel: #f5f6f8;
+  --color-borde: #d1d5db;
+  --color-texto: #1f2937;
+  --color-texto-tenue: #6b7280;
+  --color-acento: #5b8cff;
+  --color-peligro: #e5533d;
+  --color-resaltado-oculto: #d1d5db;
+  --radio: 14px;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffffff;
+  color: var(--color-texto);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 24px;
+}
+
+.cabecera {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.cabecera h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+  letter-spacing: 0.2px;
+}
+.subtitulo {
+  margin: 0;
+  color: var(--color-texto-tenue);
+  font-size: 0.9rem;
+}
+
+.contenedor-principal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== Panel ruleta ===== */
+.panel-ruleta {
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 560px;
+  max-width: 100%;
+}
+
+.caja-respuesta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  padding: 10px 16px;
+  background: #ffffff;
+}
+.etiqueta-respuesta {
+  color: var(--color-texto-tenue);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+.valor-respuesta {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-acento);
+}
+
+.zona-ruleta {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1;
+  outline: none;
+}
+
+.puntero-selector {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 30px solid var(--color-peligro);
+  z-index: 5;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+}
+
+#lienzoRuleta {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow:
+    0 0 0 6px #ffffff,
+    0 0 0 8px var(--color-borde),
+    0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 4.2s cubic-bezier(0.17, 0.67, 0.16, 0.99);
+}
+
+.boton-centro-girar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  background: #ffffff;
+  color: #12141c;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.boton-centro-girar:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.controles-principales {
+  display: flex;
+  gap: 12px;
+}
+
+.boton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    filter 0.15s ease,
+    transform 0.1s ease;
+}
+.boton:hover {
+  filter: brightness(1.1);
+}
+.boton:active {
+  transform: translateY(1px);
+}
+
+.boton-primario {
+  background: var(--color-acento);
+  color: #fff;
+}
+.boton-peligro {
+  background: transparent;
+  color: var(--color-peligro);
+  border: 1px solid var(--color-peligro);
+}
+.boton-secundario {
+  background: #e5e7eb;
+  color: var(--color-texto);
+  border: 1px solid var(--color-borde);
+}
+.boton-secundario.activo {
+  background: var(--color-acento);
+  color: #fff;
+}
+
+/* ===== Panel lateral ===== */
+.panel-lateral {
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 20px;
+  width: 320px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.campo-titulo {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  color: var(--color-texto);
+  padding: 8px 10px;
+  font-size: 0.95rem;
+}
+
+.envoltorio-textarea {
+  position: relative;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.capa-resaltado,
+.area-elementos {
+  width: 100%;
+  height: 240px;
+  padding: 10px 12px;
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.capa-resaltado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  color: transparent;
+  pointer-events: none;
+  overflow: hidden;
+  background: #ffffff;
+}
+.capa-resaltado .linea-oculta {
+  display: inline-block;
+  width: 100%;
+  background: var(--color-resaltado-oculto);
+  border-radius: 3px;
+}
+
+.area-elementos {
+  position: relative;
+  background: transparent;
+  color: var(--color-texto);
+  border: none;
+  resize: vertical;
+  outline: none;
+}
+.area-elementos[readonly] {
+  cursor: default;
+}
+.area-elementos:not([readonly]) {
+  background: #ffffff;
+}
+
+.botones-textarea {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.botones-textarea .boton {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 0.82rem;
+}
+
+.mensaje-estado {
+  min-height: 18px;
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-texto-tenue);
+}
+
+.ayuda-teclado {
+  margin-top: 4px;
+  border-top: 1px solid var(--color-borde);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fila-ayuda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--color-texto-tenue);
+}
+kbd {
+  background: #e5e7eb;
+  border: 1px solid var(--color-borde);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-size: 0.75rem;
+  color: var(--color-texto);
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Pantalla completa */
+.contenedor-principal:fullscreen,
+#contenedorRuleta:fullscreen {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+@media (max-width: 620px) {
+  .panel-ruleta,
+  .panel-lateral {
+    width: 100%;
+  }
+}
