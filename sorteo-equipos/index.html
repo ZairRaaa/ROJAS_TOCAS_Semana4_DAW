@@ -55,6 +55,16 @@
       <h2 id="titulo-resultado" tabindex="-1"></h2>
       <p id="estado-sorteo" role="status"></p>
       <div id="lista-equipos" class="equipos-resultados"></div>
+      <div class="equipos-acciones">
+        <button id="descargar" class="equipos-boton" type="button" disabled>Descargar JPG</button>
+        <button id="copiar" class="equipos-boton" type="button" disabled>Copiar equipos</button>
+        <button id="copiar-columnas" class="equipos-boton" type="button" disabled>Copiar en columnas</button>
+      </div>
+      <p id="estado-exportacion" role="status"></p>
+      <div id="copia-manual" hidden>
+        <label for="texto-copia">Selecciona y copia el resultado con Ctrl+C</label>
+        <textarea id="texto-copia" readonly rows="8"></textarea>
+      </div>
     </section>
   </main>
 </body>
