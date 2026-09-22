@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sorteo de equipos | Aula virtual</title>
   <link rel="stylesheet" href="estilos.css">
+  <script src="sorteo.js" defer></script>
 </head>
 <body class="sorteo-equipos">
   <main class="equipos-contenedor">
@@ -21,6 +22,8 @@
           <label for="participantes">1. Participantes</label>
           <p id="ayuda-participantes" class="equipos-ayuda">Escribe un participante por línea. Máximo 100 participantes y 50 caracteres por nombre.</p>
           <textarea id="participantes" rows="12" aria-describedby="ayuda-participantes" placeholder="Ana López&#10;Luis Pérez&#10;María Torres"></textarea>
+          <p id="contador" class="equipos-ayuda"></p>
+          <p id="estado-datos" role="status"></p>
         </div>
 
         <div class="equipos-opciones">
@@ -41,7 +44,7 @@
             <label for="titulo-equipos">3. Título</label>
             <input id="titulo-equipos" type="text" placeholder="Por ejemplo: Equipos de exposición">
           </div>
-          <p class="equipos-aviso">La generación de equipos estará disponible en un próximo avance.</p>
+          <p id="error-participantes" role="alert"></p>
           <button class="equipos-boton" type="button" disabled>Generar equipos</button>
         </div>
       </div>
