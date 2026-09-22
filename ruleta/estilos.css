@@ -86,8 +86,9 @@ body {
 
 .zona-ruleta {
   position: relative;
-  width: min(520px, 90vw);
-  height: min(520px, 90vw);
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1;
   outline: none;
 }
 

@@ -1,0 +1,112 @@
+:root {
+  --aula-azul: #1d4961;
+  --aula-fondo: #f4f5f7;
+  --aula-texto: #203047;
+}
+
+body,
+body.sorteo-equipos {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--aula-fondo);
+  color: var(--aula-texto);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.aula-cabecera {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  min-height: 74px;
+  padding: 16px 32px;
+  background: var(--aula-azul);
+  color: #fff;
+}
+
+.aula-cabecera .aula-marca {
+  color: inherit;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.aula-navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.aula-navegacion a {
+  padding: 7px 16px;
+  border: 1px solid #ffffff55;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.aula-navegacion a:hover {
+  background: #ffffff18;
+}
+
+.aula-navegacion a[aria-current="page"] {
+  background: #fff;
+  border-color: #fff;
+  color: var(--aula-azul);
+  font-weight: 700;
+}
+
+.aula-cabecera a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.aula-inicio,
+.pagina-ruleta .contenedor-principal,
+.sorteo-equipos .equipos-contenedor {
+  width: min(1100px, calc(100% - 40px));
+  margin: 28px auto 48px;
+}
+
+.pagina-ruleta {
+  --color-acento: var(--aula-azul);
+  --color-panel: #fff;
+}
+
+.pagina-ruleta .aula-titulo {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 28px;
+}
+
+.pagina-ruleta .panel-lateral {
+  flex: 1;
+  min-width: min(100%, 280px);
+}
+
+.pagina-ruleta .valor-respuesta {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.pagina-ruleta .caja-respuesta { gap: 16px; }
+.pagina-ruleta .contenedor-principal:fullscreen { overflow: auto; }
+
+.sorteo-equipos h1 { font-size: 28px; }
+.sorteo-equipos .equipos-encabezado p { margin-bottom: 0; }
+.sorteo-equipos .equipos-boton { background: var(--aula-azul); }
+.sorteo-equipos .equipos-tarjeta { border-top-color: var(--aula-azul); }
+.sorteo-equipos .equipos-volver { color: var(--aula-azul); }
+
+@media (max-width: 620px) {
+  .aula-cabecera { padding: 16px 20px; }
+  .aula-navegacion { width: 100%; }
+  .aula-navegacion a { text-align: center; flex: 1; }
+  .pagina-ruleta .panel-ruleta { padding: 16px; }
+  .sorteo-equipos .equipos-acciones .equipos-boton { width: 100%; }
+}

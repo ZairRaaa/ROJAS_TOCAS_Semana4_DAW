@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aula Virtual - Ruleta Aleatoria</title>
     <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="../compartido/aula.css" />
   </head>
-  <body>
-    <header class="cabecera">
-      <h1>Aula Virtual — Ruleta Aleatoria</h1>
-      <p class="subtitulo">
-        Práctica Calificada 3 · Desarrollo de Aplicaciones Web
-      </p>
+  <body class="pagina-ruleta">
+    <header class="aula-cabecera">
+      <a class="aula-marca" href="../index.html">Aula Virtual</a>
+      <nav class="aula-navegacion" aria-label="Herramientas del aula">
+        <a href="../ruleta/index.html" aria-current="page">Ruleta</a>
+        <a href="../sorteo-equipos/index.html">Sorteo de Equipos</a>
+      </nav>
     </header>
 
     <main class="contenedor-principal" id="contenedorRuleta">
+      <h1 class="aula-titulo">Ruleta aleatoria</h1>
       <!-- ===== Panel de la ruleta ===== -->
       <section class="panel-ruleta">
         <div class="caja-respuesta">
@@ -51,6 +54,7 @@
             type="text"
             id="campoTituloLista"
             class="campo-titulo"
+            aria-label="Título de la ruleta"
             value="Lista de elementos"
             maxlength="60"
           />
@@ -65,6 +69,7 @@
           <textarea
             id="areaElementos"
             class="area-elementos"
+            aria-label="Elementos de la ruleta"
             readonly
             spellcheck="false"
             placeholder="Escribe un elemento por línea..."
