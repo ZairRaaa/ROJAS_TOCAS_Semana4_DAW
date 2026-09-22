@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorteo de equipos | Aula virtual</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="sorteo-equipos">
+  <main class="equipos-contenedor">
+    <header class="equipos-encabezado">
+      <p class="equipos-etiqueta">AULA VIRTUAL</p>
+      <h1>Sorteo de equipos</h1>
+      <p>Organiza a tus participantes en equipos al azar.</p>
+    </header>
+
+    <section class="equipos-panel" aria-labelledby="titulo-configuracion">
+      <h2 id="titulo-configuracion">Configura tu sorteo</h2>
+      <div class="equipos-campos">
+        <div class="equipos-participantes">
+          <label for="participantes">1. Participantes</label>
+          <p id="ayuda-participantes" class="equipos-ayuda">Escribe un participante por línea. Máximo 100 participantes y 50 caracteres por nombre.</p>
+          <textarea id="participantes" rows="12" aria-describedby="ayuda-participantes" placeholder="Ana López&#10;Luis Pérez&#10;María Torres"></textarea>
+        </div>
+
+        <div class="equipos-opciones">
+          <div class="equipos-campo">
+            <label for="modo-sorteo">2. Cómo dividir</label>
+            <select id="modo-sorteo">
+              <option value="cantidad-equipos">Cantidad de equipos</option>
+              <option value="participantes-por-equipo">Participantes por equipo</option>
+            </select>
+          </div>
+          <div class="equipos-campo">
+            <label for="cantidad">Cantidad</label>
+            <select id="cantidad">
+              <option value="2">2</option>
+            </select>
+          </div>
+          <div class="equipos-campo">
+            <label for="titulo-equipos">3. Título</label>
+            <input id="titulo-equipos" type="text" placeholder="Por ejemplo: Equipos de exposición">
+          </div>
+          <p class="equipos-aviso">La generación de equipos estará disponible en un próximo avance.</p>
+          <button class="equipos-boton" type="button" disabled>Generar equipos</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
